@@ -1,0 +1,1 @@
+console.log("Moodify project started");
