@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify - Your Space</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  
+  <style>
+    /* PAGE SPECIFIC STYLES */
+    .journalheader {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .mainheading {
+      font-family: "Newsreader", serif;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitletext {
+      color: #53443c;
+      font-size: 1.1rem;
+    }
+
+    .entrycard {
+      background: #ffffff;
+      border: 1px solid rgba(133, 115, 106, 0.15);
+      border-radius: 32px;
+      padding: 3rem;
+      max-width: 900px;
+      margin: 0 auto 4rem auto;
+      box-shadow: 0 24px 48px rgba(27, 28, 26, 0.04);
+    }
+
+    .entrytitle {
+      font-family: "Newsreader", serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #note-input {
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(133, 115, 106, 0.15);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .archivegrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR SECTION -->
+  <div class="navbar-section">
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="navlogo">Moodify</a>
+      </div>
+      <nav class="navlinks">
+        <a class="navbtn" href="index.html"> Home </a>
+        <a class="navbtn" href="content.html"> Discover </a>
+        <a class="navbtn" href="chatbot.html"> Chat </a>
+        <a class="navbtn" href="notes.html"> Notes </a>
+      </nav>
+    </header>
+  </div>
+
+  <!-- JOURNAL SECTION -->
+  <div class="maincontainer">
+    <div class="journalheader">
+      <h1 class="mainheading">THE JOURNAL</h1>
+      <p class="subtitletext">Reflect on your mood or review your saved sanctuary items.</p>
+    </div>
+    
+    <div class="entrycard">
+      <h2 class="entrytitle">Write an Entry</h2>
+      <textarea id="note-input" rows="6" placeholder="What's taking up your mindspace today? Pour it out here..."></textarea>
+      <button class="btn" id="save-note-btn" style="width: 100%; font-size: 1.2rem; padding: 1.2rem;">Preserve Memory</button>
+    </div>
+
+    <h2 class="sectiontitle" style="display: block; text-align: center; width: 100%;">Your Archive</h2>
+    <div class="archivegrid" id="notes-grid">
+      <!-- SAVED NOTES -->
+    </div>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>

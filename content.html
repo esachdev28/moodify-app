@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify - Discover</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  
+  <style>
+    /* PAGE SPECIFIC STYLES */
+    .discoveryhead {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    .mainheading {
+      font-family: "Newsreader", serif;
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitletext {
+      color: #53443c;
+      font-size: 1.35rem;
+      margin-bottom: 3.8rem;
+    }
+
+    /* CARD STYLES FOR CONTENT */
+    .contentcard {
+      background: #f5f3ef;
+      border: 1px solid rgba(133, 115, 106, 0.15);
+      border-radius: 32px;
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .contentcard:hover {
+      transform: translateY(-10px);
+      background: #ffffff;
+    }
+
+    .cardmedia {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+      object-fit: cover;
+    }
+
+    .cardtitle {
+      font-size: 1.5rem;
+      font-family: "Newsreader", serif;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: #1b1c1a;
+    }
+
+    .carddesc {
+      color: #53443c;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      margin-bottom: 1.6rem;
+    }
+
+    /* FAVORITE BUTTONS */
+    .favbtn {
+      background: #ffffff;
+      border: 1px solid rgba(133, 115, 106, 0.15);
+      color: #53443c;
+      padding: 0.8rem 1.4rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .favbtn.active {
+      background: #884d27;
+      color: #ffffff;
+      border-color: #884d27;
+    }
+
+    /* LOADERS */
+    .loaderwrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3.5rem 0;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(0,0,0,0.05);
+      border-left-color: #884d27;
+      border-radius: 50%;
+      animation: spin 1.1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    }
+
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR SECTION -->
+  <div class="navbar-section">
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="navlogo">Moodify</a>
+      </div>
+      <nav class="navlinks">
+        <a class="navbtn" href="index.html"> Home </a>
+        <a class="navbtn" href="content.html"> Discover </a>
+        <a class="navbtn" href="chatbot.html"> Chat </a>
+        <a class="navbtn" href="notes.html"> Notes </a>
+      </nav>
+    </header>
+  </div>
+
+  <!-- DISCOVERY SECTION -->
+  <div class="maincontainer">
+    <div class="discoveryhead">
+      <h1 class="mainheading">CURATED PRECISELY FOR YOU</h1>
+      <p class="subtitletext" id="content-subtitle">Analyzing mood spectrum...</p>
+    </div>
+
+    <!-- SOUNDSCAPES SECTION -->
+    <div class="soundscapes-section">
+      <h2 class="sectiontitle">Soundscapes</h2>
+      <div id="songs-loader" class="loaderwrapper hidden"><div class="loader"></div></div>
+      <div id="songs-error" class="hidden" style="text-align: center; color: #fca5a5; padding: 2rem;"></div>
+      <div class="datagrid" id="songs-grid"></div>
+    </div>
+
+    <!-- CINEMATICS SECTION -->
+    <div class="cinematics-section">
+      <h2 class="sectiontitle">Cinematics</h2>
+      <div id="movies-loader" class="loaderwrapper hidden"><div class="loader"></div></div>
+      <div id="movies-error" class="hidden" style="text-align: center; color: #fca5a5; padding: 2rem;"></div>
+      <div class="datagrid" id="movies-grid"></div>
+    </div>
+
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/content.js"></script>
+</body>
+</html>
