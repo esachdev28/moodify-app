@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.getElementById('chat-input');
   const sendBtn = document.getElementById('send-btn');
 
-  // Hardcoded API Key provided by user
-  const apiKey = 'AIzaSyCI2wz2ZPKYXeLxfNi4ksd_b584PYHdNUE';
+  // Use API Key from config.js (secrets)
+  const apiKey = (typeof CONFIG !== 'undefined') ? CONFIG.GEMINI_API_KEY : 'YOUR_API_KEY_HERE';
 
   const mood = getMood();
   if(mood) {

@@ -89,30 +89,6 @@ async function loadSongs(term) {
   console.log('Fetching songs for:', term);
   loader.classList.remove('hidden');
   error.classList.add('hidden');
-  // Note: loadQuotes already cleared grid if called before, but let's append instead if needed.
-  // Actually, loadQuotes cleared it. So we might want to append.
-  // But wait, content.html has separate sections for Soundscapes and Cinematics.
-  // Wait, I should look at content.html again.
-  // Soundscapes has id="songs-grid". Cinematics has id="movies-grid".
-  // So loadQuotes and loadSongs both use "songs-grid"?
-  // If so, loadSongs will overwrite quotes.
-  // I'll make loadQuotes use a different one if possible, or just let them overlap.
-  // Let's assume quotes should be in a separate section.
-  // But content.html only has Soundscapes and Cinematics.
-  // I'll stick to the user's provided structure.
-}
-
-async function loadSongs(term) {
-  const loader = document.getElementById('songs-loader');
-  const error = document.getElementById('songs-error');
-  const grid = document.getElementById('songs-grid');
-  
-  if (!loader || !error || !grid) return;
-
-  console.log('Fetching songs for:', term);
-  // Keep the loader logic
-  loader.classList.remove('hidden');
-  error.classList.add('hidden');
 
   try {
     const musicTerm = Math.random() < 0.3 ? term : term + ' music';
@@ -165,7 +141,8 @@ async function loadMovies(term) {
   if (!loader || !error || !grid) return;
 
   console.log('Fetching movies for:', term);
-  const apiKey = '8e938c62'; 
+  // Use CONFIG for OMDB Key
+  const apiKey = (typeof CONFIG !== 'undefined') ? CONFIG.OMDB_API_KEY : 'YOUR_OMDB_KEY_HERE'; 
   
   loader.classList.remove('hidden');
   error.classList.add('hidden');
