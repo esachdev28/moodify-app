@@ -120,3 +120,299 @@ body {
     background: #884d27;
     border-radius: 4px;
 }
+
+/* ========================================
+   ANIMATION KEYFRAMES
+   ======================================== */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+   ======================================== */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(133, 115, 106, 0.2);
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    border-color: #884d27;
+    background: rgba(136, 77, 39, 0.1);
+}
+
+/* ========================================
+   CONTROLS BAR (Search, Filter, Sort)
+   ======================================== */
+.controls-bar {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    border: 1px solid rgba(133, 115, 106, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.controls-bar input,
+.controls-bar select {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid rgba(133, 115, 106, 0.15);
+    border-radius: 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.95rem;
+    background: #ffffff;
+    color: #1b1c1a;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.controls-bar input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.controls-bar select {
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.controls-bar input:focus,
+.controls-bar select:focus {
+    border-color: #884d27;
+    box-shadow: 0 0 0 3px rgba(136, 77, 39, 0.08);
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    grid-column: 1 / -1;
+}
+
+.pagination-btn {
+    padding: 0.7rem 1.8rem;
+    border: 1px solid rgba(133, 115, 106, 0.2);
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1b1c1a;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #884d27;
+    color: #ffffff;
+    border-color: #884d27;
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-weight: 500;
+    color: #53443c;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+[data-theme="dark"] body {
+    background: #141414 !important;
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(20, 20, 20, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .navlogo {
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .navlinks a {
+    color: #a89b93;
+}
+
+[data-theme="dark"] .navlinks a:hover {
+    color: #c78960;
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(199, 137, 96, 0.2);
+    border-color: #c78960;
+}
+
+/* Dark mode — Cards */
+[data-theme="dark"] .moodcard,
+[data-theme="dark"] .intentcard,
+[data-theme="dark"] .contentcard,
+[data-theme="dark"] .entrycard {
+    background: #1e1e1e;
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .moodcard:hover,
+[data-theme="dark"] .intentcard:hover,
+[data-theme="dark"] .contentcard:hover {
+    background: #252525;
+    border-color: rgba(199, 137, 96, 0.3);
+}
+
+[data-theme="dark"] .cardtitle {
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .carddesc {
+    color: #a89b93;
+}
+
+[data-theme="dark"] .moodcard:hover .cardtitle,
+[data-theme="dark"] .intentcard:hover .cardtitle {
+    color: #c78960;
+}
+
+/* Dark mode — Headings */
+[data-theme="dark"] .mainheading {
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .subtitletext {
+    color: #a89b93;
+}
+
+[data-theme="dark"] .sectiontitle {
+    color: #e8e2db;
+}
+
+/* Dark mode — Chat */
+[data-theme="dark"] .chatwrapper {
+    background: #1e1e1e;
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] #chat-box {
+    background: #141414;
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .message.bot {
+    background: #252525;
+    color: #e8e2db;
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] #chat-input {
+    background: #252525;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .typingindicator {
+    background: #252525;
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Dark mode — Controls bar */
+[data-theme="dark"] .controls-bar {
+    background: rgba(30, 30, 30, 0.8);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .controls-bar input,
+[data-theme="dark"] .controls-bar select {
+    background: #252525;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #e8e2db;
+}
+
+/* Dark mode — Buttons */
+[data-theme="dark"] .favbtn {
+    background: #252525;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #a89b93;
+}
+
+[data-theme="dark"] .favbtn.active {
+    background: #884d27;
+    color: #ffffff;
+    border-color: #884d27;
+}
+
+[data-theme="dark"] .pagination-btn {
+    background: #1e1e1e;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .pagination-btn:hover:not(:disabled) {
+    background: #884d27;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .pagination-info {
+    color: #a89b93;
+}
+
+/* Dark mode — Notes / Journal */
+[data-theme="dark"] #note-input {
+    background: #252525;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #e8e2db;
+}
+
+[data-theme="dark"] .entrytitle {
+    color: #e8e2db;
+}
+
+/* Dark mode — Loader */
+[data-theme="dark"] .loader {
+    border-color: rgba(255, 255, 255, 0.05);
+    border-left-color: #c78960;
+}
