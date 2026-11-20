@@ -416,3 +416,53 @@ body {
     border-color: rgba(255, 255, 255, 0.05);
     border-left-color: #c78960;
 }
+
+/* =========================================================
+   WINTER MODE TOGGLE BUTTON & EFFECTS (via winter-mode NPM Package)
+   ========================================================= */
+.winter-toggle-btn {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid rgba(186, 230, 253, 0.9);
+    padding: 0.45rem 1rem;
+    border-radius: 9999px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.25s ease;
+    margin-left: 0.5rem;
+}
+
+.winter-toggle-btn:hover {
+    background: #bae6fd;
+    color: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2);
+}
+
+.winter-toggle-btn.active {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+}
+
+[data-theme="dark"] .winter-toggle-btn {
+    background: #0f2744;
+    color: #7dd3fc;
+    border-color: #1e3a8a;
+}
+
+[data-theme="dark"] .winter-toggle-btn:hover {
+    background: #1e3a8a;
+    color: #e0f2fe;
+}
+
+[data-theme="dark"] .winter-toggle-btn.active {
+    background: #0284c7;
+    color: #ffffff;
+}

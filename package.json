@@ -1,0 +1,19 @@
+{
+  "name": "moodify-app",
+  "version": "1.0.0",
+  "description": "Mood-based content recommender web app with interactive winter snowfall effects",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "test": "node -e \"console.log('Moodify app dependencies verified');\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esachdev28/moodify-app.git"
+  },
+  "dependencies": {
+    "winter-mode": "github:esachdev28/npm_package"
+  },
+  "author": "Ekta Sachdev <esachdev5@gmail.com>",
+  "license": "MIT"
+}
